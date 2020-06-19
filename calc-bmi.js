@@ -30,29 +30,29 @@ const people = [
 ]
 
 
-function getIMC(name, gender) {
+function getBMI(name) {
     let bmi
     for(let person of people ) {
-        if(name == person.name && person.gender === "male") {
+        if(name == person.name && person.gender == "male") {
             bmi = person.weight / (person.height * person.height)
             if ( bmi >= 26 ) {
-                console.log(`${name} your BMI is ${bmi} and you are overweight.`)
+                console.log(`${name} your BMI is ${bmi.toFixed(1)} and you are overweight.`)
             } else {
-                console.log(`${name} your BMI is ${bmi} and you are at normal weight `)
+                console.log(`${name} your BMI is ${bmi.toFixed(1)} and you are at normal weight `)
             }
-        } else if (name == person.name && person.gender === "female") {
+        } else if (name == person.name && person.gender == "female") {
             bmi = person.weight / (person.height * person.height)
             if ( bmi >= 28 ) {
-                console.log(`${name} your BMI is ${bmi} and you are overweight.`)
+                console.log(`${name} your BMI is ${bmi.toFixed(1)} and you are overweight.`)
             } else {
-                console.log(`${name} your BMI is ${bmi} and you are at normal weight `)
+                console.log(`${name} your BMI is ${bmi.toFixed(1)} and you are at normal weight `)
             }
         }
     }
 
 }
 
-getIMC("Joe", "male")
-getIMC("Louis", "male")
-getIMC("Liza", "female")
-getIMC("Jullie", "female")
+getBMI("Joe")
+getBMI("Louis")
+getBMI("Liza")
+getBMI("Jullie")

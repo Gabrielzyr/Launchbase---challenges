@@ -1,7 +1,7 @@
 const users = [
     {
         name: "Suzan",
-        revenue: [123.5,143.8,60.1,33.4],
+        revenue: [123.5,243.8,60.1,33.4],
         expenses: [50.6, 75.9, 112.3, 23.4]
     },
 
@@ -20,9 +20,31 @@ const users = [
 ]
 
 function calcBalance (revenue, expenses) {
-    for(let i = 0; i < users.length; i++) {
-        if(a) {
 
-        }
+    let revenueSum = numbersSum(revenue)
+    let expensesSum = numbersSum(expenses)
+    return revenueSum - expensesSum
+}
+
+function numbersSum(numbers) {
+    let sum = 0;
+    for(let number of numbers) {
+        sum += number
+    }
+    return sum
+}
+
+for (let user of users) {
+    const balance = calcBalance(user.revenue, user.expenses)
+    const positiveBalance = balance > 0
+    let positiveOrNegative
+    if (positiveBalance) {
+        positiveOrNegative ="positive"
+        console.log(`${user.name} you have a ${positiveOrNegative} balance of ${balance.toFixed(2)}`)
+    } else {
+        positiveOrNegative ="negative"
+        console.log(`${user.name} you have a ${positiveOrNegative} balance of ${balance.toFixed(2)}`)
+
     }
 }
+
